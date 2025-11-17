@@ -5,6 +5,8 @@
 int main(int argc, char *argv[]) {
     char version[] = "0.0.1-dev";
     FILE *p_round_file = fopen(argv[1], "r");
+    FILE *p_project_file = NULL;
+
     char buffer[1024] = {0};
     /* Here we check if the first argument for the program
      * is a file, else we'll check if it's a command. */
@@ -23,6 +25,12 @@ int main(int argc, char *argv[]) {
 	    switch (argv[1][0]) {
 		case 'h': 
 		    print_usage_guide();
+		    break;
+		case 'r':
+		    p_project_file = fopen(".roundp", "r");
+		    if (p_project_file == NULL) {
+			printf("Couldn't find '.roundp' file\n");
+		    }
 		    break;
 
 		default:

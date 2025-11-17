@@ -4,6 +4,7 @@ SHELL := /data/data/com.termux/files/usr/bin/zsh
 CC = gcc
 MKDIR = mkdir -p
 RM = rm -rf
+CFLAGS = -Werror -Wall
 
 # Dynamically find all .c files (use find's -name for simplicity, no need for grep/|)
 SOURCES := $(shell find ./src -type f -name '*.c')
@@ -15,12 +16,12 @@ OBJECTS := $(patsubst ./src/%.c, ./obj/%.o, $(SOURCES))
 # Main target to build the executable
 build/bin/round: $(OBJECTS)
 	$(MKDIR) $(@D)
-	$(CC) $^ -o $@
+	$(CC) $^ -o $@ $(CFLAGS)
 
 # Pattern rule to compile each .c to .o (creates subdirs as needed)
 ./obj/%.o: ./src/%.c
 	$(MKDIR) $(@D)
-	$(CC) -c $< -o $@
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 # Optional target to echo sources for debugging
 list_sources:

@@ -1,6 +1,6 @@
 {
-    name = "RoundTest",
+    name = "Pato Test",
     // root_folder = ".",
     // always_compile = false,
-    gems = {}
+    feathers = {}
 }

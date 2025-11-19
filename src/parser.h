@@ -4,8 +4,8 @@
 typedef struct {
     FILE * pointer;
     char * name;
-} round_file_T;
+} pato_file_t;
 
-void round_parse(const char * buffer, int buffer_size, round_file_T file_to_parse);
+void pato_parse(const char * buffer, int buffer_size, pato_file_t file_to_parse);
 
 #endif

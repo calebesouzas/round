@@ -14,7 +14,7 @@ SOURCES := $(shell find ./src -type f -name '*.c')
 OBJECTS := $(patsubst ./src/%.c, ./build/obj/%.o, $(SOURCES))
 
 # Main target to build the executable
-build/bin/round: $(OBJECTS)
+build/bin/pato: $(OBJECTS)
 	$(MKDIR) $(@D)
 	$(CC) $^ -o $@ $(CFLAGS)
 

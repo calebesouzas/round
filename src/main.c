@@ -1,6 +1,7 @@
 #include <stdio.h>
 // #include <string.h>
 #include "parser.h"
+#include "pato_regex.h"
 #include "usage_guides.h"
 
 void get_pato_project_config() {
@@ -44,6 +45,9 @@ int main(int argc, char *argv[]) {
 		    break;
 		case 'r':
 		    get_pato_project_config();
+		    break;
+		case 't':
+		    printf("%s\n", pato_regex_parse("test 1 3 8 3 ifkdboej", "test"));
 		    break;
 
 		default:

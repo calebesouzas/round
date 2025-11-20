@@ -1,8 +1,9 @@
 #include <stdio.h>
 // #include <string.h>
-#include "parser.h"
-#include "pato_regex.h"
+#include "pato.h"
 #include "usage_guides.h"
+#include "parser/parser.h"
+#include "regex/pato_re.h"
 
 void get_pato_project_config() {
     pato_file_t project_file;

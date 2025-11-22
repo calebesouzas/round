@@ -1,0 +1,6 @@
+{
+    name = "Pato Test",
+    // root_folder = ".",
+    // always_compile = false,
+    feathers = {}
+}

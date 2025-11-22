@@ -1,0 +1,2 @@
+variable: int = 15
+print(variable)
